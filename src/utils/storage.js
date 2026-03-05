@@ -30,3 +30,16 @@ export const clearSession = () => {
 };
 
 
+// cart
+export const getCart = () => {
+    const cart = localStorage.getItem("cart");
+    if (cart) {
+        return JSON.parse(cart);
+    } else {
+        return [];
+    }
+};
+
+export const saveCart = (cart) => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
