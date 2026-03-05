@@ -6,8 +6,8 @@ The project uses **localStorage to simulate backend behavior**, including user a
 
 ---
 
-### Site is Live available at ...
-here url will come after deployeement
+### Live Demo ...
+https://e-commercceeee.netlify.app/
 
 ## Features
 
