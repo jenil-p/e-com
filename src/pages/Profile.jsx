@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 
+import toast from "react-hot-toast";
+
 function Profile() {
 
     const { user, updateProfile } = useAuth();
@@ -32,7 +34,7 @@ function Profile() {
 
         if (result.success) {
             setEditing(false);
-            alert("Profile updated!");
+            toast.success("Profile updated");
         }
 
     };

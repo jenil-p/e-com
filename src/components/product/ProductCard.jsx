@@ -1,4 +1,7 @@
-function ProductCard({ product, onAdd }) {
+function ProductCard({ product, cart, onAdd, onIncrease, onDecrease }) {
+
+    const cartItem = cart.find(item => item.id === product.id);
+
     return (
         <div className="bg-white shadow rounded-lg p-4 flex flex-col">
 
@@ -16,12 +19,36 @@ function ProductCard({ product, onAdd }) {
                 ${product.price}
             </p>
 
-            <button
-                onClick={() => onAdd(product)}
-                className="mt-auto bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700"
-            >
-                Add to Cart
-            </button>
+            {!cartItem ? (
+
+                <button
+                    onClick={() => onAdd(product)}
+                    className="mt-auto bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700"
+                >
+                    Add to Cart
+                </button>
+
+            ) : (
+
+                <div className="flex items-center justify-center gap-3 mt-auto">
+
+                    <button
+                        onClick={() => onDecrease(product.id)}
+                        className="px-3 py-1 bg-gray-200 rounded"
+                    > - </button>
+
+                    <span className="text-black font-semibold">
+                        {cartItem.quantity}
+                    </span>
+
+                    <button
+                        onClick={() => onIncrease(product.id)}
+                        className="px-3 py-1 bg-gray-200 rounded"
+                    > + </button>
+
+                </div>
+
+            )}
 
         </div>
     );

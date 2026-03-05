@@ -43,3 +43,13 @@ export const getCart = () => {
 export const saveCart = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
 };
+
+// orders
+export const getOrders = () => {
+    const orders = localStorage.getItem("orders");
+    return orders ? JSON.parse(orders) : [];
+};
+
+export const saveOrders = (orders) => {
+  localStorage.setItem("orders", JSON.stringify(orders));
+};
