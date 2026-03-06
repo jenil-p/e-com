@@ -16,7 +16,7 @@ function CartItem({ item, onIncrease, onDecrease }) {
 
                 {/* Top: Title & Unit Price */}
                 <div className="flex flex-col w-full">
-                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 truncate w-full">
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 w-full line-clamp-2">
                         {item.title}
                     </h4>
                     <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
