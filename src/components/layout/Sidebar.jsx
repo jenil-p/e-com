@@ -18,9 +18,9 @@ function Sidebar({ isOpen, closeMenu }) {
                     <span className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg">S</span>
                     ShopDash
                 </t>
-                <button onClick={closeMenu} className="md:hidden p-2 text-gray-400 hover:text-gray-600">
+                <div onClick={closeMenu} className="md:hidden p-2 text-gray-400 hover:text-gray-600">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
+                </div>
             </div>
 
             <nav className="p-4 flex flex-col gap-2">
