@@ -2,9 +2,8 @@ import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
 function CartItem({ item, onIncrease, onDecrease }) {
     return (
-        <div className="flex flex-row items-center gap-4 py-4 w-full border-b border-gray-100 last:border-0">
+        <div className="flex flex-row items-center gap-4 sm:py-4 w-full border-b border-gray-100 last:border-0">
 
-            {/* Image Section: Strictly sized, will not shrink or stack */}
             <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-50 rounded-xl flex items-center justify-center shrink-0 border border-gray-100 overflow-hidden">
                 <img
                     src={item.image}
@@ -13,8 +12,7 @@ function CartItem({ item, onIncrease, onDecrease }) {
                 />
             </div>
 
-            {/* Details Section: flex-1 takes remaining space, min-w-0 prevents text overflow wrapping */}
-            <div className="flex flex-row flex-1 min-w-0 justify-center gap-3">
+            <div className="flex flex-row max-sm:flex-col flex-1 min-w-0 justify-center items-center gap-3">
 
                 {/* Top: Title & Unit Price */}
                 <div className="flex flex-col w-full">
@@ -26,7 +24,7 @@ function CartItem({ item, onIncrease, onDecrease }) {
                     </p>
                 </div>
 
-                {/* Bottom: Quantity Pill & Total Price */}
+                {/* +/- and price */}
                 <div className="flex flex-col items-end justify-center w-full mt-auto">
                     <div className="flex flex-col justify-center items-center">
                         <div className="flex items-center gap-2 border border-gray-200 rounded-full bg-white px-2 py-1">
@@ -54,8 +52,6 @@ function CartItem({ item, onIncrease, onDecrease }) {
                             ${(item.price * item.quantity).toFixed(2)}
                         </div>
                     </div>
-
-                    {/* Quantity Pill */}
                 </div>
 
             </div>
